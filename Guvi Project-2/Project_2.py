@@ -30,7 +30,7 @@ class orangehrm:
         time.sleep(5)
         self.driver.find_element(By.XPATH,'(//li[@class="oxd-main-menu-item-wrapper"])[1]').click()
         time.sleep(5)
-         # get the title
+        # get the title
         title = self.driver.title
         print("TEST CASE ID: TC_PIM_02")
         is_test_case_passed = True
@@ -40,8 +40,8 @@ class orangehrm:
         gettext = self.driver.find_elements(By.XPATH,'//nav[@class="oxd-topbar-body-nav"]')
         actual_page_headers = []
         expected_page_header = ["User Management","Job","Organization","Qualifications","Nationalities","Corporate Branding","Configuration"]
-        # Check whether each required page header is presented or not
-        # If any of the page header was missingthen consider testcase was failed
+        # Check whether each required page header is present or not
+        # If any of the page header was missing then consider testcase was failed
         for i in gettext:
             actual_page_headers = str(i.text).split("\n")
         for i in expected_page_header:
@@ -61,8 +61,8 @@ class orangehrm:
         is_test_case_passed= True
         for i in gettext_1:
             actual_admin_page_headers = str(i.text).split("\n")
-        # Check whether each required menu option is presented or not
-        # If any of the menu option was missingthen consider testcase was failed
+        # Check whether each required menu option is present or not
+        # If any of the menu option was missing then consider testcase was failed
         for i in expected_admin_page_headers:
             if i not in actual_admin_page_headers:
                 is_test_case_passed = False
